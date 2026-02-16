@@ -1,0 +1,307 @@
+:root {
+    --iitm-maroon: #942926;
+    --iitm-maroon-dark: #7a1f1c;
+    --body-bg: #f8f9fa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.portal-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.top-navbar {
+    height: 64px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.portal-logo {
+    height: 48px;
+    width: auto;
+}
+
+.portal-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+
+.sub-title {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Body Layout */
+.portal-body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+/* Main Content */
+.main-content-panel {
+    width: 90%;
+    max-width: 1000px;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+}
+
+.content-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.content-header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.update-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.update-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.star-icon {
+    color: #ccc;
+    font-size: 1.5rem;
+}
+
+.update-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #111;
+    font-weight: 700;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Form */
+.result-form {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.input-group input:focus {
+    border-color: var(--iitm-maroon);
+}
+
+.btn-fetch {
+    background: var(--iitm-maroon);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+.btn-fetch:hover {
+    background: var(--iitm-maroon-dark);
+}
+
+.error-text {
+    color: #c62828;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ========== RESULT PAGE (Full-Screen PDF) ========== */
+.result-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #2a2a2a;
+}
+
+.result-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    flex-shrink: 0;
+}
+
+.toolbar-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ddd;
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid #666;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.toolbar-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.toolbar-btn.download {
+    background: var(--iitm-maroon);
+    border-color: var(--iitm-maroon);
+}
+
+.toolbar-btn.download:hover {
+    background: var(--iitm-maroon-dark);
+}
+
+.result-pdf-fullscreen {
+    flex: 1;
+    display: flex;
+}
+
+.result-pdf-fullscreen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 0;
+    }
+
+    .input-group {
+        margin-bottom: 1rem;
+    }
+
+    .top-navbar {
+        padding: 0 1.5rem;
+    }
+
+    .toolbar-title {
+        display: none;
+    }
+
+    .result-toolbar {
+        padding: 8px 12px;
+    }
+
+    .toolbar-btn {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+}

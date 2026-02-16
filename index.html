@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result - iit madras bs degree</title>
+    <link rel="icon" type="image/png"
+        href="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/512px-IIT_Madras_Logo.svg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login View -->
+        <div id="login-view" class="portal-layout">
+            <nav class="top-navbar">
+                <div class="nav-left">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/512px-IIT_Madras_Logo.svg.png"
+                        alt="IITM Logo" class="portal-logo">
+                    <div class="portal-title">
+                        <span class="main-title">IIT Madras</span>
+                        <span class="sub-title">Degree in Data Science and Applications</span>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="portal-body">
+                <main class="main-content-panel">
+                    <div class="content-header">
+                        <h2 id="greeting-text">GOOD EVENING, JANUARY 2026 TERM</h2>
+                        <p id="current-date-text">16 Feb 2026</p>
+                    </div>
+
+                    <div class="card-container">
+                        <div class="update-card">
+                            <div class="card-header">
+                                <span class="update-date" id="card-date-text">16 Feb 2026</span>
+                                <div class="star-icon">☆</div>
+                            </div>
+                            <h3>Check Examination Results</h3>
+                            <p class="card-desc">Enter your details below to fetch the result document for the current
+                                term.</p>
+
+                            <form id="result-form" class="result-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="rollNumber">Roll Number</label>
+                                        <input type="text" id="rollNumber" name="rollNumber"
+                                            placeholder="Enter Roll Number" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="hallTicketNumber">Hall Ticket Number</label>
+                                        <input type="text" id="hallTicketNumber" name="hallTicketNumber"
+                                            placeholder="Enter Hall Ticket Number" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="dob">Date of Birth</label>
+                                        <input type="date" id="dob" name="dob" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="month">Month of Exam</label>
+                                        <select id="month" name="month">
+                                            <option value="december">December</option>
+                                            <option value="june">June</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn-fetch">VIEW RESULT</button>
+                                <p id="error-message" class="error-text" style="display: none;"></p>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Result View -->
+        <div id="result-view" class="result-page" style="display: none;">
+            <div class="result-toolbar">
+                <button id="back-btn" class="toolbar-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12" />
+                        <polyline points="12 19 5 12 12 5" />
+                    </svg> Back
+                </button>
+                <span id="result-title" class="toolbar-title">Result: </span>
+                <div class="toolbar-actions">
+                    <button id="print-btn" class="toolbar-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9" />
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                            <rect x="6" y="14" width="12" height="8" />
+                        </svg> Print
+                    </button>
+                    <a href="result.pdf" download class="toolbar-btn download">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg> Download
+                    </a>
+                </div>
+            </div>
+            <div class="result-pdf-fullscreen">
+                <iframe id="result-iframe" src="result.pdf" title="Result Viewer"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
